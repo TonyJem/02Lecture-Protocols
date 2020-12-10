@@ -75,5 +75,38 @@ print(date.DateToString())
 
 
 
+let block: (String) -> String = { myVar in
+    return myVar + " - iOS "
+}
+print(block("Your string"))
+
+
+let skaicius: (Int) -> Int = { myVar in
+    return myVar + 1
+}
+print(skaicius(5))
+
+//Sort higher than 4
+let grades = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+//grades.filter(<#T##isIncluded: (Int) throws -> Bool##(Int) throws -> Bool#>)
+
+let goodMarks: ([Int]) -> [Int] = { array in
+    var resultArray: [Int] = []
+    
+    for number in array {
+        if number > 4 {
+            resultArray.append(number)
+        }
+    }
+
+    return resultArray
+}
+print(goodMarks(grades))
+
+
+// Sort by first letter descenting:
+let names = ["Darius", "Karolis", "Bronius"]
+
+
 
 
