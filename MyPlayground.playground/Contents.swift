@@ -1,5 +1,7 @@
 import Foundation
 
+//MARK: - Protocols:
+
 protocol Edible {
     var eatMessage: String { get }
 }
@@ -31,14 +33,13 @@ func showEdibleMessage(edible: Edible){
 //print(showEdibleMessage(edible: Brownie()))
 
 
+//MARK: - Extentions:
 extension String {
     func lastWordLenght() -> Int {
         return self.components(separatedBy: NSCharacterSet.whitespacesAndNewlines).last?.count ?? 0
     }
 }
-
 print("Lorem ipsum dolor sit amet".lastWordLenght())
-
 
 
 extension String {
@@ -48,7 +49,6 @@ extension String {
         return String(firstChar) + String(lastChar)
     }
 }
-
 print("Lorem ipsum dolor sit amet".DropFirstAndLastChars())
 
 
@@ -57,17 +57,23 @@ extension Int {
         return String(self)
     }
 }
-
 print(5.IntToString())
 
 
 extension Date {
     func DateToString() -> String {
         let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "YYYY-MM-dd"
         return dateFormatter.string(from: self)
     }
 }
-
 let date = Date()
-
 print(date.DateToString())
+
+
+//MARK: - Closures:
+
+
+
+
+
